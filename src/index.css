@@ -1,10 +1,14 @@
+/* -------------------------------------------------------------------------- */
+/*                         Style Sheet for index.html                         */
+/* -------------------------------------------------------------------------- */
+
 @font-face {
-  font-family: "Red Hat Display"; 
-  src: url(assets/RedHatDisplay-VariableFont_wght.ttf)
+  font-family: "Red Hat Display";
+  src: url(assets/RedHatDisplay-VariableFont_wght.ttf);
 }
 
 :root {
-  font-family: "Red Hat Display", Arial, Helvetica, sans-serif; 
+  font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
   line-height: 1.2;
   font-weight: normal;
   font-size: 1.2rem;
@@ -19,7 +23,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body{
+html,
+body {
   margin: 0;
   padding: 0;
 }

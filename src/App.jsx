@@ -1,3 +1,8 @@
+/* -------------------------------------------------------------------------- */
+/*              Main JavaScript file that houses the main web app             */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- Imports -------------------------------- */
 import "./App.css";
 import installIcon from "./assets/gravity-ui--arrow-shape-down-to-line.svg";
 import githubIcon from "./assets/octicon--mark-github-24.svg";
@@ -9,10 +14,11 @@ import aboutGraphic2 from "./assets/ramalama-about-graphic-2.svg";
 import aboutGraphic3 from "./assets/ramalama-about-graphic-3.svg";
 import aboutGraphic4 from "./assets/ramalama-about-graphic-4.svg";
 
+/* -------------------------------- Main App Function -------------------------------- */
 function App() {
   return (
     <>
-      {/* Welcome Section */}
+      {/* ----------------------------- Welcome Section ---------------------------- */}
       <div className="welcome viewport welcome-grid">
         <div className="welcome-info">
           <h1 className="welcome-h1-orange">rama</h1>
@@ -68,7 +74,7 @@ function App() {
         </div>
       </div>
 
-      {/* Install Section */}
+      {/* ----------------------------- Install Section ---------------------------- */}
       <div className="install viewport orange-background" id="install">
         <div className="install-info">
           <h1 className="install-h1">It&apos;s one line and that&apos;s it!</h1>
@@ -77,7 +83,8 @@ function App() {
           </h2>
           <h3 className="install-h3">Linux and Mac:</h3>
           <p className="install-code">
-            <div>curl -fsSL https://raw.githubcontent.com/</div><div>containers/ramalama/s/install.sh | bash</div>
+            <div>curl -fsSL https://raw.githubcontent.com/</div>
+            <div>containers/ramalama/s/install.sh | bash</div>
           </p>
           <h3 className="install-h3">RamaLama is also available on PyPi!</h3>
           <p className="install-code">pip install ramalama</p>
@@ -89,7 +96,7 @@ function App() {
         </div>
       </div>
 
-      {/* Demo Section */}
+      {/* ------------------------------ Demo Section ------------------------------ */}
       <div className="demo viewport orange-background">
         <div className="demo-info">
           <h1 className="demo-header">Watch it in action</h1>
@@ -97,30 +104,46 @@ function App() {
         </div>
       </div>
 
-      {/* About Section */}
+      {/* ----------------------------- About Section ---------------------------- */}
       <div className="about about-viewport" id="about">
         <div className="about-info">
           <h1 className="about-header">How does it work?</h1>
           <div className="about-grid">
-            <img className="about-graphic-1" src={aboutGraphic1} alt="RamaLama About Graphic 1"></img>
+            <img
+              className="about-graphic-1"
+              src={aboutGraphic1}
+              alt="RamaLama About Graphic 1"
+            ></img>
             <p className="about-text-1">
               When RamaLama is first run, it inspects your system for GPU
               support, falling back to CPU support if no GPUs are present.
             </p>
 
-            <img className="about-graphic-2" src={aboutGraphic2} alt="RamaLama About Graphic 2"></img>
+            <img
+              className="about-graphic-2"
+              src={aboutGraphic2}
+              alt="RamaLama About Graphic 2"
+            ></img>
             <p className="about-text-2">
               It then uses a container engine like Podman or Docker to download
               a container image from quay.io/ramalama.
             </p>
 
-            <img className="about-graphic-3" src={aboutGraphic3} alt="RamaLama About Graphic 3"></img>
+            <img
+              className="about-graphic-3"
+              src={aboutGraphic3}
+              alt="RamaLama About Graphic 3"
+            ></img>
             <p className="about-text-3">
               Once the container image is in place, RamaLama pulls the specified
               AI Model from any of types of model registries.
             </p>
 
-            <img className="about-graphic-4" src={aboutGraphic4} alt="RamaLama About Graphic 4"></img>
+            <img
+              className="about-graphic-4"
+              src={aboutGraphic4}
+              alt="RamaLama About Graphic 4"
+            ></img>
             <p className="about-text-4">
               Time to run our inferencing runtime. RamaLama offers switchable
               inferencing runtimes, namely llama.cpp and vLLM, for running
@@ -130,7 +153,7 @@ function App() {
         </div>
       </div>
 
-      {/* Footer */}
+      {/* --------------------------------- Footer --------------------------------- */}
       <div className="footer orange-background">
         <footer>
           <p>© Ramalama</p>
