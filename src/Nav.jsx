@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                   JavaScript file for building the navbar                  */
+/* -------------------------------------------------------------------------- */
+
 import "./Nav.css";
 import ramalamaLogo from "./assets/ramalama-logo-text-only.svg";
 

@@ -1,3 +1,9 @@
+/* -------------------------------------------------------------------------- */
+/*                            Style Sheet for App.jsx                            */
+/* -------------------------------------------------------------------------- */
+
+/* ----------------------------- Global Styles ----------------------------- */
+
 @font-face {
   font-family: "Red Hat Mono";
   src: url(assets/RedHatMono-VariableFont_wght.ttf);
@@ -36,6 +42,8 @@
   align-items: center;
   padding: 0%;
 }
+
+/* ----------------------------- Welcome Section ---------------------------- */
 
 .welcome-grid {
   display: grid;
@@ -92,6 +100,8 @@
   }
 }
 
+/* ----------------------------- Install Section ---------------------------- */
+
 .install-info {
   padding: 10%;
   @media screen and (max-width: 1024px) {
@@ -129,6 +139,8 @@
     font-size: larger;
   }
 }
+
+/* ------------------------------ About Section ----------------------------- */
 
 .demo,
 .about {
@@ -238,6 +250,8 @@
   margin-block-start: 0;
   margin-block-end: 0;
 }
+
+/* ------------------------------ Other Styles ------------------------------ */
 
 button {
   align-items: center;
