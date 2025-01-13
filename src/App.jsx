@@ -22,14 +22,14 @@ function App() {
         {/* ----------------------------- Welcome Section ---------------------------- */}
         <div className="welcome viewport welcome-grid">
           <div className="welcome-info">
-            <h1 className="welcome-h1-orange">rama</h1>
-            <h1 className="welcome-h1">lama</h1>
+            <h1 className="welcome-h1-orange" role="banner">rama</h1>
+            <h1 className="welcome-h1" role="banner">lama</h1>
             <h2 className="welcome-h2">
               Make working with AI boring through the use of OCI containers
             </h2>
             <ul>
               <li>
-                <a href="https://github.com/containers/ramalama?tab=readme-ov-file#install">
+                <a href="https://github.com/containers/ramalama?tab=readme-ov-file#install" role="button">
                   <button>
                     {" "}
                     <img src={installIcon} alt="Install Icon"></img>{" "}
@@ -38,7 +38,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/containers/ramalama">
+                <a href="https://github.com/containers/ramalama" role="button">
                   <button>
                     {" "}
                     <img src={githubIcon} alt="GitHub Icon"></img>{" "}
@@ -47,7 +47,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="https://matrix.to/#/#ramalama:fedoraproject.org">
+                <a href="https://matrix.to/#/#ramalama:fedoraproject.org" role="button">
                   <button>
                     {" "}
                     <img src={communityIcon} alt="Community Icon"></img>{" "}
@@ -56,7 +56,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/containers/ramalama?tab=readme-ov-file#hardware-support">
+                <a href="https://github.com/containers/ramalama?tab=readme-ov-file#hardware-support" role="button">
                   <button>
                     {" "}
                     <img src={hardwareIcon} alt="Hardware Icon"></img>{" "}
@@ -78,7 +78,7 @@ function App() {
         {/* ----------------------------- Install Section ---------------------------- */}
         <div className="install viewport orange-background" id="install">
           <div className="install-info">
-            <h1 className="install-h1">
+            <h1 className="install-h1" role="banner">
               It&apos;s one line and that&apos;s it!
             </h1>
             <h2 className="install-h2">
@@ -92,7 +92,7 @@ function App() {
             <h3 className="install-h3">RamaLama is also available on PyPi!</h3>
             <p className="install-code">pip install ramalama</p>
             <a href="https://github.com/containers/ramalama?tab=readme-ov-file#install">
-              <button className="install-button">
+              <button className="install-button" role="button">
                 More install methods here
               </button>
             </a>
@@ -102,7 +102,7 @@ function App() {
         {/* ------------------------------ Demo Section ------------------------------ */}
         <div className="demo viewport orange-background">
           <div className="demo-info">
-            <h1 className="demo-header">Watch it in action</h1>
+            <h1 className="demo-header" role="banner">Watch it in action</h1>
             {/* GIF Here */}
           </div>
         </div>
@@ -110,14 +110,14 @@ function App() {
         {/* ----------------------------- About Section ---------------------------- */}
         <div className="about about-viewport" id="about">
           <div className="about-info">
-            <h1 className="about-header">How does it work?</h1>
+            <h1 className="about-header" role="banner">How does it work?</h1>
             <div className="about-grid">
               <img
                 className="about-graphic-1"
                 src={aboutGraphic1}
                 alt="RamaLama About Graphic 1"
               ></img>
-              <p className="about-text-1">
+              <p className="about-text-1" role="paragraph">
                 When RamaLama is first run, it inspects your system for GPU
                 support, falling back to CPU support if no GPUs are present.
               </p>
@@ -127,7 +127,7 @@ function App() {
                 src={aboutGraphic2}
                 alt="RamaLama About Graphic 2"
               ></img>
-              <p className="about-text-2">
+              <p className="about-text-2" role="paragraph">
                 It then uses a container engine like Podman or Docker to
                 download a container image from quay.io/ramalama.
               </p>
@@ -137,7 +137,7 @@ function App() {
                 src={aboutGraphic3}
                 alt="RamaLama About Graphic 3"
               ></img>
-              <p className="about-text-3">
+              <p className="about-text-3" role="paragraph">
                 Once the container image is in place, RamaLama pulls the
                 specified AI Model from any of types of model registries.
               </p>
@@ -147,7 +147,7 @@ function App() {
                 src={aboutGraphic4}
                 alt="RamaLama About Graphic 4"
               ></img>
-              <p className="about-text-4">
+              <p className="about-text-4" role="paragraph">
                 Time to run our inferencing runtime. RamaLama offers switchable
                 inferencing runtimes, namely llama.cpp and vLLM, for running
                 containerized models.
