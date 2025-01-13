@@ -21,9 +21,9 @@ function App() {
       <main>
         {/* ----------------------------- Welcome Section ---------------------------- */}
         <div className="welcome viewport welcome-grid">
-          <div className="welcome-info">
-            <h1 className="welcome-h1-orange" role="banner">rama</h1>
-            <h1 className="welcome-h1" role="banner">lama</h1>
+          <div className="welcome-info" role="banner">
+            <h1 className="welcome-h1-orange">rama</h1>
+            <h1 className="welcome-h1">lama</h1>
             <h2 className="welcome-h2">
               Make working with AI boring through the use of OCI containers
             </h2>
@@ -78,7 +78,7 @@ function App() {
         {/* ----------------------------- Install Section ---------------------------- */}
         <div className="install viewport orange-background" id="install">
           <div className="install-info">
-            <h1 className="install-h1" role="banner">
+            <h1 className="install-h1">
               It&apos;s one line and that&apos;s it!
             </h1>
             <h2 className="install-h2">
@@ -102,7 +102,7 @@ function App() {
         {/* ------------------------------ Demo Section ------------------------------ */}
         <div className="demo viewport orange-background">
           <div className="demo-info">
-            <h1 className="demo-header" role="banner">Watch it in action</h1>
+            <h1 className="demo-header">Watch it in action</h1>
             {/* GIF Here */}
           </div>
         </div>
@@ -110,7 +110,7 @@ function App() {
         {/* ----------------------------- About Section ---------------------------- */}
         <div className="about about-viewport" id="about">
           <div className="about-info">
-            <h1 className="about-header" role="banner">How does it work?</h1>
+            <h1 className="about-header">How does it work?</h1>
             <div className="about-grid">
               <img
                 className="about-graphic-1"
