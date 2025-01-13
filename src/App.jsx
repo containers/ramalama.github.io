@@ -160,7 +160,6 @@ function App() {
       {/* --------------------------------- Footer --------------------------------- */}
       <div className="footer orange-background">
         <footer>
-          <p>© Ramalama</p>
           <p>
             <a href="https://github.com/containers/ramalama">Github</a> |{" "}
             <a href="https://matrix.to/#/#ramalama:fedoraproject.org">Matrix</a>{" "}
