@@ -240,7 +240,8 @@
 .about-graphic-2,
 .about-graphic-3,
 .about-graphic-4 {
-  width: 100%;
+  width: 18vw;
+  margin-top: 1vh;
 }
 
 .about-text-1,
