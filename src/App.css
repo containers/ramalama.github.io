@@ -200,24 +200,30 @@
 
 .about-grid > * {
   justify-self: center;
-  align-self: center;
   height: auto;
 }
 
 .about-graphic-1 {
   grid-area: graphic-1;
+  height: 25vh;
 }
 
 .about-graphic-2 {
   grid-area: graphic-2;
+  height: 25vh;
+
 }
 
 .about-graphic-3 {
   grid-area: graphic-3;
+  height: 25vh;
+
 }
 
 .about-graphic-4 {
   grid-area: graphic-4;
+  height: 25vh;
+
 }
 
 .about-text-1 {
