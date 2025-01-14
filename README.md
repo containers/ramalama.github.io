@@ -7,13 +7,21 @@ If you would like to contribute to the website, please fork this project and cre
 ## How to install and run
 
 Clone the repo:
-`git clone https://github.com/containers/ramalama.ai.git`
+```
+git clone https://github.com/containers/ramalama.ai.git
+```
 
 Once installed, cd into the folder:
-`cd ramalama.ai`
+```
+cd ramalama.ai
+```
 
 Run a fresh install of npm:
-`npm install`
+```
+npm install
+```
 
 Run the website locally:
-`npm run dev`
+```
+npm run dev
+```
