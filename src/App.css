@@ -142,12 +142,8 @@
 
 /* ------------------------------ About Section ----------------------------- */
 
-.demo,
-.about {
+.about, .demo {
   padding: 10%;
-}
-
-.about {
   @media screen and (max-width: 1024px) {
     padding: 15% 10%;
     @media screen and (max-width: 500px) {
@@ -251,6 +247,11 @@
   margin-block-start: 0;
   margin-block-end: 0;
 }
+
+.demo-header {
+  text-align: center;
+}
+
 
 /* ------------------------------ Other Styles ------------------------------ */
 
