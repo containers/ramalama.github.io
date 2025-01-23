@@ -9,6 +9,7 @@ import githubIcon from "./assets/octicon--mark-github-24.svg";
 import communityIcon from "./assets/gravity-ui--persons.svg";
 import hardwareIcon from "./assets/gravity-ui--gear.svg";
 import llamaMascot from "./assets/ramalama-logo-llama-only.svg";
+import demoGIF from "./assets/demo.gif";
 import aboutGraphic1 from "./assets/ramalama-about-graphic-1.svg";
 import aboutGraphic2 from "./assets/ramalama-about-graphic-2.svg";
 import aboutGraphic3 from "./assets/ramalama-about-graphic-3.svg";
@@ -103,7 +104,7 @@ function App() {
         <div className="demo viewport orange-background">
           <div className="demo-info">
             <h1 className="demo-header">Watch it in action</h1>
-            {/* GIF Here */}
+            <img src={demoGIF}></img>
           </div>
         </div>
 
