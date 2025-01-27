@@ -104,7 +104,7 @@ function App() {
         <div className="demo viewport orange-background">
           <div className="demo-info">
             <h1 className="demo-header">Watch it in action</h1>
-            <img src={demoGIF} className="demo-gif"></img>
+            <img src={demoGIF} className="demo-gif" alt="GIF of RamaLama running in a command line"></img>
           </div>
         </div>
 
