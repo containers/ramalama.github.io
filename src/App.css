@@ -147,14 +147,11 @@
   align-self: center;
   justify-self: center;
   width: 100%;
-  @media screen and (max-width: 768px) {
-    width: 125%;
-  }
 }
 
 /* ------------------------------ About Section ----------------------------- */
 
-.about, .demo {
+.about {
   padding: 10%;
   @media screen and (max-width: 1024px) {
     padding: 15% 10%;
@@ -250,6 +247,9 @@
 .about-graphic-4 {
   width: 18vw;
   margin-top: 1vh;
+  @media screen and (max-width: 1024px) {
+    width: 75vw;
+  }
 }
 
 .about-text-1,
