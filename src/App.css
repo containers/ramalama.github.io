@@ -102,7 +102,7 @@
 
 /* ----------------------------- Install Section ---------------------------- */
 
-.install-info {
+.install-info, .demo-info {
   padding: 10%;
   @media screen and (max-width: 1024px) {
     font-size: medium;
@@ -137,6 +137,18 @@
   @media screen and (max-width: 768px) {
     padding: 10px;
     font-size: larger;
+  }
+}
+
+/* ------------------------------ Demo Section ------------------------------ */
+
+.demo-gif {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    width: 125%;
   }
 }
 
