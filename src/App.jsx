@@ -22,7 +22,7 @@ function App() {
       <main>
         {/* ----------------------------- Welcome Section ---------------------------- */}
         <div className="welcome viewport welcome-grid">
-          <div className="welcome-info" role="banner">
+          <div className="welcome-info">
             <h1 className="welcome-h1-orange">rama</h1>
             <h1 className="welcome-h1">lama</h1>
             <h2 className="welcome-h2">
@@ -30,7 +30,7 @@ function App() {
             </h2>
             <ul>
               <li>
-                <a href="https://github.com/containers/ramalama?tab=readme-ov-file#install" role="button">
+                <a href="https://github.com/containers/ramalama?tab=readme-ov-file#install">
                   <button>
                     {" "}
                     <img src={installIcon} alt="Install Icon"></img>{" "}
@@ -39,7 +39,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/containers/ramalama" role="button">
+                <a href="https://github.com/containers/ramalama">
                   <button>
                     {" "}
                     <img src={githubIcon} alt="GitHub Icon"></img>{" "}
@@ -48,7 +48,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="https://matrix.to/#/#ramalama:fedoraproject.org" role="button">
+                <a href="https://matrix.to/#/#ramalama:fedoraproject.org">
                   <button>
                     {" "}
                     <img src={communityIcon} alt="Community Icon"></img>{" "}
@@ -57,7 +57,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/containers/ramalama?tab=readme-ov-file#hardware-support" role="button">
+                <a href="https://github.com/containers/ramalama?tab=readme-ov-file#hardware-support">
                   <button>
                     {" "}
                     <img src={hardwareIcon} alt="Hardware Icon"></img>{" "}
