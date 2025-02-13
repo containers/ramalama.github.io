@@ -245,10 +245,13 @@
 .about-graphic-2,
 .about-graphic-3,
 .about-graphic-4 {
-  width: 18vw;
+  width: 20vw;
   margin-top: 1vh;
   @media screen and (max-width: 1024px) {
-    width: 75vw;
+    width: 30vw;
+    @media screen and (max-width: 500px) {
+      width: 75vw;
+    }
   }
 }
 
