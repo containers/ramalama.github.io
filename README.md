@@ -8,12 +8,12 @@ If you would like to contribute to the website, please fork this project and cre
 
 Clone the repo:
 ```
-git clone https://github.com/containers/ramalama.ai.git
+git clone https://github.com/containers/ramalama.github.io.git
 ```
 
 Once installed, cd into the folder:
 ```
-cd ramalama.ai
+cd ramalama.github.io
 ```
 
 Run a fresh install of npm:
