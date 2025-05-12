@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -fsSL https://raw.githubusercontent.com/containers/ramalama/s/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/containers/ramalama/s/install.sh | bash
