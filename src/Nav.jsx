@@ -22,6 +22,19 @@ const Navbar = () => {
           <li>
             <a href="#about">About</a>
           </li>
+          <li>
+            <a
+              href="https://github.com/containers/ramalama"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="github-stars-badge"
+                src="https://img.shields.io/github/stars/containers/ramalama?style=social&label=Star&maxAge=240"
+                alt="GitHub stars"
+              />
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

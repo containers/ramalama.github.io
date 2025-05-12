@@ -57,4 +57,11 @@
 .navbar-right .nav-links a {
   color: #000;
   text-decoration: none;
+  line-height: 28px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.github-stars-badge {
+  height: 28px;
 }
