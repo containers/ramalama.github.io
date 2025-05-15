@@ -1,5 +1,11 @@
 #!/bin/bash
 
-set -euo pipefail
+main() {
+  set -euo pipefail
 
-curl -fsSL https://raw.githubusercontent.com/containers/ramalama/s/install.sh | bash
+  local url="https://raw.githubusercontent.com/containers/ramalama/s/install.sh"
+  curl -fsSL "$url" | bash
+}
+
+main "$@"
+
