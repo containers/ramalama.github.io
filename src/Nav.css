@@ -2,17 +2,27 @@
 /*                           Style Sheet for Nav.jsx                          */
 /* -------------------------------------------------------------------------- */
 
-.logo {
+.logo-text {
   width: 20%;
   margin: 1.25rem 2rem;
 
   @media screen and (max-width: 1024px) {
     width: 30%;
     @media screen and (max-width: 768px) {
-      width: 40%;
-      @media screen and (max-width: 500px) {
-        width: 50%;
-      }
+      display: none;
+    }
+  }
+}
+
+.logo-mascot {
+  display: none;
+  width: 20%;
+  margin: 1.25rem 2rem;
+  
+  @media screen and (max-width: 768px) {
+    display: flex;
+    @media screen and (max-width: 500px) {
+      width: 50%;
     }
   }
 }

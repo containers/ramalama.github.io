@@ -3,14 +3,16 @@
 /* -------------------------------------------------------------------------- */
 
 import "./Nav.css";
-import ramalamaLogo from "./assets/ramalama-logo-text-only.svg";
+import ramalamaText from "./assets/ramalama-logo-text-only.svg";
+import ramalamaLogo from "./assets/ramalama-logo-llama-only.svg";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
         <a href="">
-          <img className="logo" src={ramalamaLogo} alt="RamaLama Logo"></img>
+          <img className="logo-text" src={ramalamaText} alt="RamaLama Logo"></img>
+          <img className="logo-mascot" src={ramalamaLogo} alt="RamaLama Logo"></img>
         </a>
       </div>
       <div className="navbar-middle"></div>
