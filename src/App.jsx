@@ -14,6 +14,10 @@ import aboutGraphic1 from "./assets/ramalama-about-graphic-1.svg";
 import aboutGraphic2 from "./assets/ramalama-about-graphic-2.svg";
 import aboutGraphic3 from "./assets/ramalama-about-graphic-3.svg";
 import aboutGraphic4 from "./assets/ramalama-about-graphic-4.svg";
+import copySVG from "./assets/copy.svg";
+
+let installCode1 = "curl -fsSL https://ramalama.ai/install.sh | bash";
+let installCode2 = "pip install ramalama";
 
 /* -------------------------------- Main App Function -------------------------------- */
 function App() {
@@ -31,7 +35,7 @@ function App() {
             <ul>
               <li>
                 <a href="https://github.com/containers/ramalama?tab=readme-ov-file#install">
-                  <button>
+                  <button className="button">
                     {" "}
                     <img src={installIcon} alt="Install Icon"></img>{" "}
                     <p>Installation guide here</p>
@@ -40,7 +44,7 @@ function App() {
               </li>
               <li>
                 <a href="https://github.com/containers/ramalama">
-                  <button>
+                  <button className="button">
                     {" "}
                     <img src={githubIcon} alt="GitHub Icon"></img>{" "}
                     <p>Contribute to the project</p>
@@ -49,7 +53,7 @@ function App() {
               </li>
               <li>
                 <a href="https://matrix.to/#/#ramalama:fedoraproject.org">
-                  <button>
+                  <button className="button">
                     {" "}
                     <img src={communityIcon} alt="Community Icon"></img>{" "}
                     <p>Interact with the community</p>
@@ -58,7 +62,7 @@ function App() {
               </li>
               <li>
                 <a href="https://github.com/containers/ramalama?tab=readme-ov-file#hardware-support">
-                  <button>
+                  <button className="button">
                     {" "}
                     <img src={hardwareIcon} alt="Hardware Icon"></img>{" "}
                     <p>Hardware support here</p>
@@ -85,12 +89,32 @@ function App() {
             <h2 className="install-h2">
               Install RamaLama by running this in your command line:
             </h2>
-            <h3 className="install-h3">Linux and Mac:</h3>
-            <p className="install-code">
-              <div>curl -fsSL https://ramalama.ai/install.sh | sh</div>
-            </p>
-            <h3 className="install-h3">RamaLama is also available on PyPi!</h3>
-            <p className="install-code">pip install ramalama</p>
+            <div>
+              <h3 className="install-h3">Linux and Mac:</h3>
+              <div className="install-code">
+                <p>{installCode1}</p>
+                <button
+                  className="copy-button"
+                  onClick={() => navigator.clipboard.writeText(installCode1)}
+                >
+                  <img className="copy-svg" src={copySVG} width="30px" />
+                </button>
+              </div>
+            </div>
+            <div>
+              <h3 className="install-h3">
+                RamaLama is also available on PyPi!
+              </h3>
+              <div className="install-code">
+                <p>{installCode2}</p>
+                <button
+                  className="copy-button"
+                  onClick={() => navigator.clipboard.writeText(installCode2)}
+                >
+                  <img className="copy-svg" src={copySVG} width="30px" />
+                </button>
+              </div>
+            </div>
             <a href="https://github.com/containers/ramalama?tab=readme-ov-file#install">
               <button className="install-button" role="button">
                 More install methods here
@@ -103,7 +127,11 @@ function App() {
         <div className="demo viewport orange-background">
           <div className="demo-info">
             <h1 className="demo-header">Watch it in action</h1>
-            <img src={demoGIF} className="demo-gif" alt="GIF of RamaLama running in a command line"></img>
+            <img
+              src={demoGIF}
+              className="demo-gif"
+              alt="GIF of RamaLama running in a command line"
+            ></img>
           </div>
         </div>
 

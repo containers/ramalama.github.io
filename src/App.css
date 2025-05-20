@@ -101,6 +101,23 @@
 }
 
 /* ----------------------------- Install Section ---------------------------- */
+.copy-button {
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.copy-button:hover {
+  background-color: #454545;
+  border-radius: 20%;
+  transition-duration: 2ms;
+}
+
+.copy-svg {
+  @media screen and (max-width: 768px){
+    width: 20px;
+  }
+}
 
 .install-info, .demo-info {
   padding: 10%;
@@ -108,9 +125,6 @@
     font-size: medium;
     @media screen and (max-width: 768px) {
       font-size: small;
-      @media screen and (max-width: 500px) {
-        font-size: x-small;
-      }
     }
   }
 }
@@ -121,12 +135,24 @@
 
 .install-code {
   /* word-break: break-all; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: "Red Hat Mono", monospace !important;
   font-weight: 500;
   padding: 1rem;
+  padding-left: 2rem;
   background-color: #262626;
   border-radius: 15px;
   width: 100%;
+  @media screen and (max-width: 768px) {
+       padding: 0.75rem;
+  padding-left: 1rem;
+      @media screen and (max-width: 500px) {
+         padding: 0.5rem;
+  padding-left: 1rem;;
+      }
+    }
 }
 
 .install-code div {
@@ -286,7 +312,7 @@ button {
   transition: border-color 0.25s;
 }
 
-button:not(.install-button) {
+button:not(.install-button, .copy-button) {
   display: flex;
   align-items: center;
   width: 70%;
