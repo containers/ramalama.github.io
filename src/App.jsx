@@ -3,7 +3,6 @@
 /* -------------------------------------------------------------------------- */
 
 /* --------------------------------- Imports -------------------------------- */
-import "./App.css";
 import installIcon from "./assets/gravity-ui--arrow-shape-down-to-line.svg";
 import githubIcon from "./assets/octicon--mark-github-24.svg";
 import communityIcon from "./assets/gravity-ui--persons.svg";

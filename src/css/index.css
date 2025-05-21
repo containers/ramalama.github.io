@@ -1,16 +1,120 @@
 /* -------------------------------------------------------------------------- */
-/*                            Style Sheet for App.jsx                            */
+/*                         Style Sheet for index.html                         */
 /* -------------------------------------------------------------------------- */
 
-/* ----------------------------- Global Styles ----------------------------- */
+@font-face {
+  font-family: "Red Hat Display";
+  src: url(assets/RedHatDisplay-VariableFont_wght.ttf);
+}
 
 @font-face {
   font-family: "Red Hat Mono";
   src: url(assets/RedHatMono-VariableFont_wght.ttf);
 }
 
+:root {
+  font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  font-weight: normal;
+  font-size: 1.2rem;
+
+  color-scheme: light dark;
+  color: black;
+  background-color: #ececec;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* ----------------------------- Navbar Section ---------------------------- */
+
+.logo-text {
+  width: 20%;
+  margin: 1.25rem 2rem;
+
+  @media screen and (max-width: 1024px) {
+    width: 30%;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.logo-mascot {
+  display: none;
+  width: 20%;
+  margin: 1.25rem 2rem;
+  
+  @media screen and (max-width: 768px) {
+    display: flex;
+    @media screen and (max-width: 500px) {
+      width: 50%;
+    }
+  }
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  background-color: #ffffffcc;
+  width: 100%;
+}
+
+.navbar-left {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+.navbar-right .nav-links {
+  margin: 0 1rem;
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar-right .nav-links li {
+  padding: 0 1rem;
+}
+
+.navbar-right .nav-links a {
+  color: #000;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.github-stars-badge {
+  height: 28px;
+  @media screen and (max-width: 768px) {
+    align-content: center;
+    height: 20px;
+  }
 }
 
 .viewport {
