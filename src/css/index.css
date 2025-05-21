@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: "Red Hat Display";
-  src: url(assets/RedHatDisplay-VariableFont_wght.ttf);
+  src: url(../assets/RedHatDisplay-VariableFont_wght.ttf);
 }
 
 @font-face {
   font-family: "Red Hat Mono";
-  src: url(assets/RedHatMono-VariableFont_wght.ttf);
+  src: url(../assets/RedHatMono-VariableFont_wght.ttf);
 }
 
 :root {
