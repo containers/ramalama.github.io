@@ -2,7 +2,6 @@
 /*                   JavaScript file for building the navbar                  */
 /* -------------------------------------------------------------------------- */
 
-import "./Nav.css";
 import ramalamaText from "./assets/ramalama-logo-text-only.svg";
 import ramalamaLogo from "./assets/ramalama-logo-llama-only.svg";
 

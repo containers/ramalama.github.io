@@ -3,7 +3,6 @@
 /* -------------------------------------------------------------------------- */
 
 /* --------------------------------- Imports -------------------------------- */
-import "./App.css";
 import installIcon from "./assets/gravity-ui--arrow-shape-down-to-line.svg";
 import githubIcon from "./assets/octicon--mark-github-24.svg";
 import communityIcon from "./assets/gravity-ui--persons.svg";
@@ -189,10 +188,10 @@ function App() {
       <div className="footer orange-background">
         <footer>
           <p>
-            <a href="https://github.com/containers/ramalama">Github</a> |{" "}
-            <a href="https://matrix.to/#/#ramalama:fedoraproject.org">Matrix</a>{" "}
+            <a className="footer-link" href="https://github.com/containers/ramalama">Github</a> |{" "}
+            <a className="footer-link" href="https://matrix.to/#/#ramalama:fedoraproject.org">Matrix</a>{" "}
             |{" "}
-            <a href="https://github.com/containers/ramalama/blob/main/README.md">
+            <a className="footer-link" href="https://github.com/containers/ramalama/blob/main/README.md">
               Docs
             </a>
           </p>
