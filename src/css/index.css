@@ -99,14 +99,17 @@ h1 {
 }
 
 .navbar-right .nav-links li {
-  padding: 0 1rem;
+  margin: 0 1rem;
+}
+
+ul.nav-links {
+  align-items: center;
 }
 
 .navbar-right .nav-links a {
   color: #000;
   text-decoration: none;
   display: inline-flex;
-  align-items: center;
 }
 
 .nav-links a:hover {
