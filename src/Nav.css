@@ -44,16 +44,6 @@
   text-decoration: none;
 }
 
-.orange-part {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #cf3c23;
-}
-
-.orange-part:hover {
-  color: #cf3c23;
-}
-
 .navbar-right .nav-links {
   margin: 0 1rem;
   list-style-type: none;
@@ -67,11 +57,14 @@
 .navbar-right .nav-links a {
   color: #000;
   text-decoration: none;
-  line-height: 28px;
   display: inline-flex;
   align-items: center;
 }
 
 .github-stars-badge {
   height: 28px;
+  @media screen and (max-width: 768px) {
+    align-content: center;
+    height: 20px;
+  }
 }
