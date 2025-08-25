@@ -15,6 +15,8 @@ import aboutGraphic3 from "./assets/ramalama-about-graphic-3.svg";
 import aboutGraphic4 from "./assets/ramalama-about-graphic-4.svg";
 import copySVG from "./assets/copy.svg";
 
+import presentations from './presentations.json'
+
 let installCode1 = "curl -fsSL https://ramalama.ai/install.sh | bash";
 let installCode2 = "pip install ramalama";
 
@@ -182,6 +184,45 @@ function App() {
             </div>
           </div>
         </div>
+
+        {/* ------------------------------ Presentations Section ------------------------------ */}
+        <div className="presentation viewport" id="presentations">
+          <div className="presentation-info">
+            <h1 className="presentation-header">Presentations</h1>
+            <h2 className="presentation-header">Conference talks</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Year</th>
+                  <th>Title</th>
+                  <th>Speaker(s)</th>
+                  <th>Resource</th>
+                </tr>
+              </thead>
+              <tbody>
+                {presentations.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.event}</td>
+                    <td>{item.year}</td>
+                    <td>{item.title}</td>
+                    <td>{item.speakers}</td>
+                    <td>
+                      <a href={item.resource.url} target="_blank" rel="nofollow">
+                        {item.resource.type}
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+             <p className="presentation-text" role="paragraph">
+                If you would like to submit a presentation or demo here,
+                please create a pull request to the <a href="https://github.com/containers/ramalama.github.io" target="_blank" rel="nofollow">RamaLama website repository.</a>
+              </p>
+          </div>
+        </div>
+
       </main>
 
       {/* --------------------------------- Footer --------------------------------- */}
