@@ -1,0 +1,52 @@
+[
+    {
+        "event": "DevConf.CZ",
+        "year": "2025",
+        "title": "RamaLama: Running AI Models in Containers.",
+        "speakers": "Dan Walsh",
+        "resource": {
+            "type": "Video",
+            "url": "https://www.youtube.com/watch?v=53NZFC-ReWs"
+        }
+    },
+    {
+        "event": "Southern California Linux Expo",
+        "year": "2025",
+        "title": "RamaLama: Making AI Boring",
+        "speakers": "James Huang",
+        "resource": {
+            "type": "Video",
+            "url": "https://www.youtube.com/watch?v=XBddFX-XMo8"
+        }
+    },
+        {
+        "event": "FOSDEM",
+        "year": "2025",
+        "title": "RamaLama: Making working with AI Models Boring",
+        "speakers": "Eric Curtin",
+        "resource": {
+            "type": "Info",
+            "url": "https://fosdem.org/2025/schedule/event/fosdem-2025-4486-ramalama-making-working-with-ai-models-boring/"
+        }
+    },
+    {
+        "event": "AI_Dev Europe",
+        "year": "2025",
+        "title": "Lightning Talk: Ramalama - The Project That Brings AI and Containers Together While Making AI Boring",
+        "speakers": "Alexon Oliveira",
+        "resource": {
+            "type": "Info",
+            "url": "https://sched.co/25TvN"
+        }
+    },
+    {
+        "event": "KCD Czech & Slovak",
+        "year": "2025",
+        "title": "RamaLama: Making AI Deployment Boring with OCI Containers",
+        "speakers": "Dan Walsh",
+        "resource": {
+            "type": "Video",
+            "url": "https://www.youtube.com/watch?v=ny0aabc754g"
+        }
+    }
+]
