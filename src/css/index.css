@@ -146,7 +146,8 @@ ul.nav-links {
 .welcome,
 .install,
 .demo,
-.about {
+.about,
+.presentation {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -444,7 +445,9 @@ ul {
   font-size: x-larger;
 }
 
-.demo-header {
+.demo-header,
+.presentation-header,
+.presentation-text {
   text-align: center;
 }
 
@@ -457,5 +460,35 @@ footer {
 }
 
 .footer-link:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+thead {
+  background-color: #f5f5f5;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+table a,
+.presentation p a {
+  color: blue;
   text-decoration: underline;
 }
