@@ -326,6 +326,7 @@ ul {
   align-self: center;
   justify-self: center;
   width: 100%;
+  max-width: 800px;
 }
 
 /* ------------------------------ About Section ----------------------------- */
