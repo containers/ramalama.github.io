@@ -273,7 +273,7 @@ function App() {
             </p>
             <div className="community-links">
               <a
-                href="https://discord.gg/MkCXuTRBUn"
+                href="https://discord.gg/cFyDXs9nS9"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
               >
