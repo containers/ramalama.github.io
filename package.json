@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "cp -R public/docs dist/docs",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -27,6 +28,7 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "gh-pages": "^6.3.0",
     "globals": "^16.4.0",
+    "sirv": "^3.0.2",
     "vite": "^7.1.12"
   }
 }
