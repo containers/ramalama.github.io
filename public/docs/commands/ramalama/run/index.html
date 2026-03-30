@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">run | RamaLama</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://ramalama.ai/docs/img/logo.svg"><meta data-rh="true" name="twitter:image" content="https://ramalama.ai/docs/img/logo.svg"><meta data-rh="true" property="og:url" content="https://ramalama.ai/docs/commands/ramalama/run"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="run | RamaLama"><meta data-rh="true" name="description" content="run specified AI Model as a chatbot"><meta data-rh="true" property="og:description" content="run specified AI Model as a chatbot"><link data-rh="true" rel="icon" href="/docs/img/favicon.png"><link data-rh="true" rel="canonical" href="https://ramalama.ai/docs/commands/ramalama/run"><link data-rh="true" rel="alternate" href="https://ramalama.ai/docs/commands/ramalama/run" hreflang="en"><link data-rh="true" rel="alternate" href="https://ramalama.ai/docs/commands/ramalama/run" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Commands","item":"https://ramalama.ai/docs/category/commands"},{"@type":"ListItem","position":2,"name":"ramalama","item":"https://ramalama.ai/docs/commands/ramalama/"},{"@type":"ListItem","position":3,"name":"run","item":"https://ramalama.ai/docs/commands/ramalama/run"}]}</script><link rel="stylesheet" href="/docs/assets/css/styles.e9c79a02.css">
-<script src="/docs/assets/js/runtime~main.25e40575.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.ca008938.js" defer="defer"></script>
 <script src="/docs/assets/js/main.3dabe244.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,6 +29,36 @@ the execution. URL support means if a model is on a web site or even on your loc
 The default can be overridden in the <code>ramalama.conf</code> file.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="--authfilepassword"><strong>--authfile</strong>=<em>password</em><a href="#--authfilepassword" class="hash-link" aria-label="Direct link to --authfilepassword" title="Direct link to --authfilepassword" translate="no">​</a></h4>
 <p>path of the authentication file for OCI registries</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="--backendauto--vulkan--rocm--cuda--sycl--openvino"><strong>--backend</strong>=<em>auto</em> | vulkan | rocm | cuda | sycl | openvino<a href="#--backendauto--vulkan--rocm--cuda--sycl--openvino" class="hash-link" aria-label="Direct link to --backendauto--vulkan--rocm--cuda--sycl--openvino" title="Direct link to --backendauto--vulkan--rocm--cuda--sycl--openvino" translate="no">​</a></h4>
+<p>GPU backend to use for inference (default: auto).</p>
+<p>Available backends depend on the detected GPU hardware.</p>
+<p><strong>auto</strong> (default): Automatically selects the preferred backend based on your GPU:</p>
+<ul>
+<li class=""><strong>AMD GPUs</strong>: vulkan (Linux/macOS) or rocm (Windows)</li>
+<li class=""><strong>NVIDIA GPUs</strong>: cuda</li>
+<li class=""><strong>Intel GPUs</strong>: vulkan (Linux/macOS) or sycl (Windows); openvino available as explicit option</li>
+<li class=""><strong>No GPU</strong>: vulkan (CPU fallback)</li>
+</ul>
+<p><strong>Platform-specific behavior</strong>:</p>
+<ul>
+<li class="">On <strong>Linux/macOS</strong>, Vulkan provides broad compatibility and is preferred for AMD and Intel GPUs</li>
+<li class="">On <strong>Windows</strong>, vulkan is not supported on WSL2, so vendor-specific backends (rocm, sycl) are preferred</li>
+</ul>
+<p><strong>Explicit backend selection</strong>:</p>
+<ul>
+<li class=""><strong>vulkan</strong>: Use Vulkan-based inference (compatible with AMD, Intel, and CPU)</li>
+<li class=""><strong>rocm</strong>: Use AMD ROCm backend (AMD GPUs only)</li>
+<li class=""><strong>cuda</strong>: Use NVIDIA CUDA backend (NVIDIA GPUs only)</li>
+<li class=""><strong>sycl</strong>: Use Intel SYCL/oneAPI backend (Intel GPUs only)</li>
+<li class=""><strong>openvino</strong>: Use Intel OpenVINO backend (Intel GPUs only); uses <code>ghcr.io/ggml-org/llama.cpp:full-openvino</code></li>
+</ul>
+<p><strong>Available choices</strong>: The allowed values for <code>--backend</code> are dynamically determined based on
+your detected GPU hardware. For example, on a system with an AMD GPU, only <code>auto</code>, <code>vulkan</code>,
+and <code>rocm</code> are available.</p>
+<p><strong>Configuration</strong>: The default can be overridden in the <code>ramalama.conf</code> file or via the
+RAMALAMA_BACKEND environment variable.</p>
+<p>Examples:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Use auto-detection (default)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ramalama run granite</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Force Vulkan backend</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ramalama run --backend vulkan granite</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Force ROCm backend on AMD GPU</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ramalama run --backend rocm granite</span><br></span></code></pre></div></div>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="--cache-reuse256"><strong>--cache-reuse</strong>=256<a href="#--cache-reuse256" class="hash-link" aria-label="Direct link to --cache-reuse256" title="Direct link to --cache-reuse256" translate="no">​</a></h4>
 <p>Min chunk size to attempt reusing from the cache via KV shifting</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="--color"><strong>--color</strong><a href="#--color" class="hash-link" aria-label="Direct link to --color" title="Direct link to --color" translate="no">​</a></h4>
@@ -54,15 +84,19 @@ for a value and set the variable only if it is set on the host.</p>
 <p>Show this help message and exit</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="--imageimage"><strong>--image</strong>=IMAGE<a href="#--imageimage" class="hash-link" aria-label="Direct link to --imageimage" title="Direct link to --imageimage" translate="no">​</a></h4>
 <p>OCI container image to run with specified AI model. RamaLama defaults to using
-images based on the accelerator it discovers. For example:
-<code>quay.io/ramalama/ramalama</code>. See the table below for all default images.
+images based on the accelerator it discovers and the selected <code>--backend</code>.
+For example: <code>quay.io/ramalama/ramalama</code>. See the table below for all default images.
 The default image tag is based on the minor version of the RamaLama package.
 Version 0.18.0 of RamaLama pulls an image with a <code>:0.18</code> tag from the quay.io/ramalama OCI repository. The --image option overrides this default.</p>
 <p>The default can be overridden in the <code>ramalama.conf</code> file or via the
 RAMALAMA_IMAGE environment variable. <code>export RAMALAMA_IMAGE=quay.io/ramalama/aiimage:1.2</code> tells
 RamaLama to use the <code>quay.io/ramalama/aiimage:1.2</code> image.</p>
+<p><strong>Note</strong>: The <code>--backend</code> option provides a higher-level way to select the appropriate image
+based on GPU type. Use <code>--backend</code> to select vulkan, rocm, cuda, sycl, or openvino backends, which will
+automatically choose the correct image. Use <code>--image</code> only when you need to override the image
+selection entirely.</p>
 <p>Accelerated images:</p>
-<table><thead><tr><th>Accelerator</th><th>Image</th></tr></thead><tbody><tr><td>CPU, Apple</td><td>quay.io/ramalama/ramalama</td></tr><tr><td>HIP_VISIBLE_DEVICES</td><td>quay.io/ramalama/rocm</td></tr><tr><td>CUDA_VISIBLE_DEVICES</td><td>quay.io/ramalama/cuda</td></tr><tr><td>ASAHI_VISIBLE_DEVICES</td><td>quay.io/ramalama/asahi</td></tr><tr><td>INTEL_VISIBLE_DEVICES</td><td>quay.io/ramalama/intel-gpu</td></tr><tr><td>ASCEND_VISIBLE_DEVICES</td><td>quay.io/ramalama/cann</td></tr><tr><td>MUSA_VISIBLE_DEVICES</td><td>quay.io/ramalama/musa</td></tr></tbody></table>
+<table><thead><tr><th>Backend / Accelerator</th><th>Image</th></tr></thead><tbody><tr><td>CPU, Vulkan</td><td>quay.io/ramalama/ramalama</td></tr><tr><td>ROCm (AMD)</td><td>quay.io/ramalama/rocm</td></tr><tr><td>CUDA (NVIDIA)</td><td>quay.io/ramalama/cuda</td></tr><tr><td>Intel GPU (sycl)</td><td>quay.io/ramalama/intel-gpu</td></tr><tr><td>Intel GPU (openvino)</td><td>ghcr.io/ggml-org/llama.cpp<!-- -->:full-openvino</td></tr><tr><td>Asahi (Apple Silicon)</td><td>quay.io/ramalama/asahi</td></tr><tr><td>CANN (Ascend)</td><td>quay.io/ramalama/cann</td></tr><tr><td>MUSA (Moore Threads)</td><td>quay.io/ramalama/musa</td></tr></tbody></table>
 <p>Upstream llama.cpp &quot;full&quot; images from <code>ghcr.io/ggml-org/llama.cpp</code> are also supported.
 RamaLama automatically detects the image type and adjusts the container CLI accordingly.</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ramalama run --image ghcr.io/ggml-org/llama.cpp:full-vulkan MODEL</span><br></span></code></pre></div></div>

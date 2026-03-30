@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Configuration File | RamaLama</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://ramalama.ai/docs/img/logo.svg"><meta data-rh="true" name="twitter:image" content="https://ramalama.ai/docs/img/logo.svg"><meta data-rh="true" property="og:url" content="https://ramalama.ai/docs/configuration/conf"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Configuration File | RamaLama"><meta data-rh="true" name="description" content="Configuration file reference"><meta data-rh="true" property="og:description" content="Configuration file reference"><link data-rh="true" rel="icon" href="/docs/img/favicon.png"><link data-rh="true" rel="canonical" href="https://ramalama.ai/docs/configuration/conf"><link data-rh="true" rel="alternate" href="https://ramalama.ai/docs/configuration/conf" hreflang="en"><link data-rh="true" rel="alternate" href="https://ramalama.ai/docs/configuration/conf" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Configuration","item":"https://ramalama.ai/docs/category/configuration"},{"@type":"ListItem","position":2,"name":"Configuration File","item":"https://ramalama.ai/docs/configuration/conf"}]}</script><link rel="stylesheet" href="/docs/assets/css/styles.e9c79a02.css">
-<script src="/docs/assets/js/runtime~main.25e40575.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.ca008938.js" defer="defer"></script>
 <script src="/docs/assets/js/main.3dabe244.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -46,6 +46,40 @@ option = value</p>
 Options: llama-stack, none</p>
 <p><strong>api_key</strong>=&quot;&quot;</p>
 <p>OpenAI-compatible API key. Can also be set via the RAMALAMA_API_KEY environment variable.</p>
+<p><strong>backend</strong>=&quot;auto&quot;</p>
+<p>GPU backend to use for inference (default: auto).</p>
+<p>This setting affects which container image is selected and how GPU resources are utilized.</p>
+<p>Valid options: auto, vulkan, rocm, cuda, sycl, openvino</p>
+<ul>
+<li class="">
+<p><strong>auto</strong> (default): Automatically selects the preferred backend based on detected GPU:</p>
+<ul>
+<li class="">AMD GPUs: vulkan (Linux/macOS) or rocm (Windows)</li>
+<li class="">NVIDIA GPUs: cuda</li>
+<li class="">Intel GPUs: vulkan (Linux/macOS) or sycl (Windows); openvino available as explicit option</li>
+<li class="">No GPU: vulkan (CPU fallback)</li>
+</ul>
+</li>
+<li class="">
+<p><strong>vulkan</strong>: Use Vulkan-based inference (compatible with AMD, Intel, and CPU)</p>
+</li>
+<li class="">
+<p><strong>rocm</strong>: Use AMD ROCm backend (AMD GPUs only)</p>
+</li>
+<li class="">
+<p><strong>cuda</strong>: Use NVIDIA CUDA backend (NVIDIA GPUs only)</p>
+</li>
+<li class="">
+<p><strong>sycl</strong>: Use Intel SYCL/oneAPI backend (Intel GPUs only)</p>
+</li>
+<li class="">
+<p><strong>openvino</strong>: Use Intel OpenVINO backend (Intel GPUs only); uses <code>ghcr.io/ggml-org/llama.cpp:full-openvino</code></p>
+</li>
+</ul>
+<p><strong>Platform-specific behavior</strong>: On Windows, vulkan is not supported on WSL2, so vendor-specific backends (rocm for AMD, sycl for Intel) are automatically preferred when using <code>backend=&quot;auto&quot;</code>.</p>
+<p>The RAMALAMA_BACKEND environment variable overrides this field.</p>
+<p>Example configuration:</p>
+<div class="language-toml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-toml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">[ramalama]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">backend = &quot;vulkan&quot;  # Force Vulkan for all GPUs</span><br></span></code></pre></div></div>
 <p><strong>carimage</strong>=&quot;registry.access.redhat.com/ubi10-micro<!-- -->:latest<!-- -->&quot;</p>
 <p>OCI model car image</p>
 <p>Image to be used when building and pushing --type=car models</p>
