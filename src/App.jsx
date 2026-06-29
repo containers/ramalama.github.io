@@ -262,37 +262,6 @@ function App() {
           </div>
         </div>
 
-        {/* ------------------------------ Community Section ------------------------------ */}
-        <div className="community viewport" id="community">
-          <div className="community-info">
-            <h1 className="community-header">Community / Developer Meetups</h1>
-            <p className="community-text" role="paragraph">
-              We host a public community and developer meetup on Discord every other week to
-              discuss project direction and provide an open forum for users to get help, ask
-              questions, and showcase new features.
-            </p>
-            <div className="community-links">
-              <a
-                href="https://discord.gg/cFyDXs9nS9"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-              >
-                <button className="button">Join on Discord</button>
-              </a>
-              <a
-                href="https://docs.google.com/document/d/1wiqn7ItKgc8BgyTUQ46eeY23ms_hWbkhAoiP9D1ClfY/edit?tab=t.0#heading=h.b1x47hb6d0pt"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-              >
-                <button className="button">Meeting Agenda</button>
-              </a>
-              <a href={calendarLink} download="ramalama-community-meetup.ics">
-                <button className="button">Add to Calendar</button>
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* ------------------------------ Presentations Section ------------------------------ */}
         <div className="presentation viewport" id="presentations">
           <div className="presentation-info">
