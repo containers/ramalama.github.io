@@ -3,7 +3,7 @@
 main() {
   set -euo pipefail
 
-  local url="https://raw.githubusercontent.com/containers/ramalama/s/install.sh"
+  local url="https://raw.githubusercontent.com/containers/ramalama/main/install.sh"
   curl -fsSL "$url" | bash
 }
 
