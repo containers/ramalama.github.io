@@ -20,84 +20,8 @@ import presentations from "./presentations.json";
 let installCode1 = "curl -fsSL https://ramalama.ai/install.sh | bash";
 let installCode2 = "pip install ramalama";
 
-const padNumber = (value) => String(value).padStart(2, "0");
-
-const formatICSDate = (date, { utc = false } = {}) => {
-  const year = utc ? date.getUTCFullYear() : date.getFullYear();
-  const month = utc ? date.getUTCMonth() : date.getMonth();
-  const day = utc ? date.getUTCDate() : date.getDate();
-  const hours = utc ? date.getUTCHours() : date.getHours();
-  const minutes = utc ? date.getUTCMinutes() : date.getMinutes();
-  const seconds = utc ? date.getUTCSeconds() : date.getSeconds();
-
-  return (
-    year +
-    padNumber(month + 1) +
-    padNumber(day) +
-    "T" +
-    padNumber(hours) +
-    padNumber(minutes) +
-    padNumber(seconds) +
-    (utc ? "Z" : "")
-  );
-};
-
-const escapeICSText = (text) =>
-  text.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
-
-
-const nextBiweeklyWednesday = () => {
-  const MS_PER_DAY = 24 * 60 * 60 * 1000;
-
-  const referenceDate = new Date(Date.UTC(2025, 10, 19, 15, 30));
-  const now = new Date();
-
-  const diffDays = Math.floor((now.getTime() - referenceDate.getTime()) / MS_PER_DAY);
-  const mod =  diffDays % 14;
-  const daysToAdd = mod == 0 ? 0 : 14 - mod
-
-  const candidate = new Date(referenceDate.getTime() + (diffDays + daysToAdd) * MS_PER_DAY);
-
-  if (candidate <= now) { // Handling the day of
-    candidate.setUTCDate(candidate.getUTCDate() + 14);
-  }
-
-  return candidate;
-};
-
-const createCalendarLink = () => {
-  const start = nextBiweeklyWednesday();
-  const end = new Date(start.getTime() + 60 * 60000);
-  const dtStamp = new Date();
-  const MEETING_LOCATION= "https://discord.gg/MkCXuTRBUn"
-  const MEETING_DESCRIPTION =
-    "We host a public community and developer meetup on Discord every other week to discuss project direction and provide an open forum for users to get help, ask questions, and showcase new features.";
-
-  const icsContent = [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//RamaLama//Community Meetup//EN",
-    "CALSCALE:GREGORIAN",
-    "METHOD:PUBLISH",
-    "BEGIN:VEVENT",
-    `UID:${start.getTime()}@ramalama.ai`,
-    `SUMMARY:RamaLama Community / Developer Meetup`,
-    `DTSTAMP:${formatICSDate(dtStamp, { utc: true })}`,
-    `DTSTART:${formatICSDate(start)}`,
-    `DTEND:${formatICSDate(end)}`,
-    `LOCATION:${MEETING_LOCATION}`,
-    `DESCRIPTION:${escapeICSText(MEETING_DESCRIPTION)}`,
-    `URL:${MEETING_LOCATION}`,
-    "END:VEVENT",
-    "END:VCALENDAR",
-  ].join("\r\n");
-
-  return `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`;
-};
-
 /* -------------------------------- Main App Function -------------------------------- */
 function App() {
-  const calendarLink = createCalendarLink();
 
   return (
     <>
